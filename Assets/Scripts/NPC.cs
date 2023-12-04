@@ -5,6 +5,10 @@ using UnityEngine;
 public class NPC : MonoBehaviour
 {
     // Start is called before the first frame update
+    private bool playerDetect = false;
+    private bool canvasActivate = true;
+    public GameObject dialoguecanvas;
+    public GameObject fCanvas;
     void Start()
     {
         
@@ -13,24 +17,31 @@ public class NPC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(playerDetect && Input.GetKeyDown(KeyCode.F))
+        {
+            fCanvas.gameObject.SetActive(false);
+            dialoguecanvas.gameObject.SetActive(true);
+        }
     }
 
-    void OnCollisionEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         //start dialog
         if(collision.gameObject.tag == "Player")
         {
-            Debug.Log("you entered my difficulty domain");
+            playerDetect = true;
+            fCanvas.gameObject.SetActive(true);
         }
     }
 
-    void OnCollisionExit2D(Collider2D collision)
+    void OnTriggerExit2D(Collider2D collision)
     {
         //end dialog
         if(collision.gameObject.tag == "Player")
         {
-            Debug.Log("bye nerd");
+            playerDetect = false;
+            fCanvas.gameObject.SetActive(false);
+            dialoguecanvas.gameObject.SetActive(false);
         }
     }
 }

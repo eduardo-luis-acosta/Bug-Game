@@ -7,6 +7,8 @@ TagManager:
   - Door
   - Button
   - Enemy
+  - Health
+  - Defense
   layers:
   - Default
   - TransparentFX

@@ -10,6 +10,8 @@ public class MovementTest : MonoBehaviour
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
     Vector2 movement;
+    private int currentHealth = 50;
+    private int maxHealth = 100;
     // Update is called once per frame
     void Update()
     {

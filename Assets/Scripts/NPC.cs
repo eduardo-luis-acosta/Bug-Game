@@ -16,16 +16,9 @@ public class NPC : MonoBehaviour
 
     public List<string> dialogList = new List<string>();
 
-    private int option;
+    private int option = 0;
     void Start()
     {
-        dialogList.Add("when i say im locking in i need backshots");
-        dialogList.Add("BECAUSE BACKSHOTS KILLED MY GRANDMA OK!!! ");
-        dialogList.Add("i love back shots");
-        dialogList.Add("i need backshots");
-        dialogList.Add("hooray backshots");
-        option = 0;
-        
         textBox.text = dialogList[option];
     }
 
@@ -55,11 +48,6 @@ public class NPC : MonoBehaviour
         }
     } 
 
-    /*void OnTriggerStay2D(Collider2D collision)
-    {
-        
-    }*/
-
     void OnTriggerExit2D(Collider2D collision)
     {
         //end dialog
@@ -74,6 +62,7 @@ public class NPC : MonoBehaviour
 
     void cycleDialogue()
     {
+        //dialogue cycle with prompt
         option++;
         if(option > dialogList.Count - 1)
         {

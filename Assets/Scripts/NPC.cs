@@ -1,17 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class NPC : MonoBehaviour
 {
     // Start is called before the first frame update
     private bool playerDetect = false;
-    private bool canvasActivate = true;
+    private bool playerEng = false;
     public GameObject dialoguecanvas;
     public GameObject fCanvas;
+    public GameObject npcObj;
+    public TextMeshProUGUI textBox;
+
+
+    public List<string> dialogList = new List<string>();
+
+    private int option;
     void Start()
     {
+        dialogList.Add("when i say im locking in i need backshots");
+        dialogList.Add("BECAUSE BACKSHOTS KILLED MY GRANDMA OK!!! ");
+        dialogList.Add("i love back shots");
+        dialogList.Add("i need backshots");
+        dialogList.Add("hooray backshots");
+        option = 0;
         
+        textBox.text = dialogList[option];
     }
 
     // Update is called once per frame
@@ -21,6 +36,12 @@ public class NPC : MonoBehaviour
         {
             fCanvas.gameObject.SetActive(false);
             dialoguecanvas.gameObject.SetActive(true);
+            playerEng = true;
+        }
+
+        if(Input.GetKeyUp(KeyCode.Space) && playerEng)
+        {
+            cycleDialogue();
         }
     }
 
@@ -32,7 +53,12 @@ public class NPC : MonoBehaviour
             playerDetect = true;
             fCanvas.gameObject.SetActive(true);
         }
-    }
+    } 
+
+    /*void OnTriggerStay2D(Collider2D collision)
+    {
+        
+    }*/
 
     void OnTriggerExit2D(Collider2D collision)
     {
@@ -40,8 +66,20 @@ public class NPC : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             playerDetect = false;
+            playerEng = false;
             fCanvas.gameObject.SetActive(false);
             dialoguecanvas.gameObject.SetActive(false);
         }
+    }
+
+    void cycleDialogue()
+    {
+        option++;
+        if(option > dialogList.Count - 1)
+        {
+            option = 0;
+        }
+
+        textBox.text = dialogList[option];
     }
 }

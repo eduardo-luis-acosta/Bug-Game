@@ -67,9 +67,10 @@ public class Player : MonoBehaviour
 
         if(collision.gameObject.tag == "Defense")
         {
-            addDefense(10f);
+            addDefense(40f);
             Destroy(collision.gameObject);
         }
+
     }
 
     private IEnumerator SlowHeal(int time)

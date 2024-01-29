@@ -10,6 +10,8 @@ TagManager:
   - Health
   - Defense
   - Damage
+  - Wall
+  - Bullet
   layers:
   - Default
   - TransparentFX

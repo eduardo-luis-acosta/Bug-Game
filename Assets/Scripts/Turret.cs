@@ -8,6 +8,7 @@ public class Turret : MonoBehaviour
     public Rigidbody2D bullet;
     public GameObject player;
     public bool shoot;
+    public float numb;
     void Start()
     {
         StartCoroutine("ShootBullet");
@@ -28,7 +29,7 @@ public class Turret : MonoBehaviour
             Rigidbody2D clone;
             clone = Instantiate(bullet, transform.position, transform.rotation);
 
-            clone.AddForce(player.transform.position * 1f, ForceMode2D.Impulse);
+            clone.transform.position = Vector3.LerpUnclamped(transform.position, player.transform.position, Time.deltaTime);
 
             yield return new WaitForSeconds(2f);
         }

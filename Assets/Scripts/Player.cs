@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject player;
+    public GameObject bullet;
     public TextMeshProUGUI statsBox;
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
@@ -20,9 +21,22 @@ public class Player : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+        Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
+
+        transform.up = direction;
+
         if(currentHealth > maxHealth)
         {
             currentHealth = 100;
+        }
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            shootBullet();
         }
         statsBox.text = "Health " + currentHealth + " \n Defense: " + defense + " \n";
     }
@@ -51,6 +65,10 @@ public class Player : MonoBehaviour
         defense += add;
     }
 
+    void shootBullet()
+    {
+        Instantiate(bullet, transform.position, transform.rotation);
+    }
     void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Health")
@@ -77,4 +95,5 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
     }
+
 }

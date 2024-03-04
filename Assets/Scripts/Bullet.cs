@@ -5,22 +5,29 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float speed;
-
+    public float speed = 20;
+    public GameObject playerobj;
+    private Player playerscript;
     void Start()
     {
-        
+        playerscript = playerobj.GetComponent<Player>();        
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.up * Time.deltaTime * speed);
+        if(playerscript.magic == true)
+        {
+            transform.Translate(Vector2.up * Time.deltaTime * (speed/3));
+        } else {
+            transform.Translate(Vector2.up * Time.deltaTime * speed);
+        }
+        
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Wall")
+        if(collision.gameObject.tag == "Wall" && playerscript.magic == false)
         {
             Destroy(gameObject);
         }

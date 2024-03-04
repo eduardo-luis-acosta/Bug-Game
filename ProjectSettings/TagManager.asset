@@ -12,11 +12,12 @@ TagManager:
   - Damage
   - Wall
   - Bullet
+  - magic
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Wall
   - Water
   - UI
   - 

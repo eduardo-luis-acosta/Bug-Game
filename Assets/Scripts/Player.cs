@@ -16,6 +16,9 @@ public class Player : MonoBehaviour
 
     private float defense = 0f;
     private int damage = 5;
+
+    //bullet type testing
+    public bool magic = false;
     // Update is called once per frame
     void Update()
     {
@@ -89,6 +92,10 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
+        if(collision.gameObject.tag == "magic")
+        {
+            magic = true;
+        }
     }
 
     private IEnumerator SlowHeal(int time)

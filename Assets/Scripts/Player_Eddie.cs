@@ -22,11 +22,20 @@ public class Player_Eddie : MonoBehaviour
     public int currentHealth;
     public Health health;
 
+    //Player Armor Variables
+    public int maxArmor = 100;
+    public int currentArmor;
+    public Armor armor;
+
+
     void Start()
     {
         //Start Health = 100 at Game Start
         currentHealth = maxHealth;
         health.setMaxHealth(maxHealth);
+
+        currentArmor = 0;
+        armor.setArmor(currentArmor);
     }
 
     void Update()
@@ -56,5 +65,8 @@ public class Player_Eddie : MonoBehaviour
         currentHealth -= damage;
         health.setHealth(currentHealth);
 
+        if(currentHealth == 0) {
+            
+        }
     }
 }

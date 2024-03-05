@@ -27,7 +27,7 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Wall" && playerscript.magic == false)
+        if(collision.gameObject.tag == "Wall")
         {
             Destroy(gameObject);
         }

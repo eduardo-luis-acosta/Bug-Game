@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public TextMeshProUGUI statsBox;
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
+    public flyEnemny flyEnemnyScript;
     Vector2 movement;
     private float currentHealth = 50f;
     private int maxHealth = 100;
@@ -92,9 +93,24 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
+        if(collision.gameObject.tag == "enemyArea")
+        {
+            flyEnemnyScript.activated = true;
+        }
+
         if(collision.gameObject.tag == "magic")
         {
             magic = true;
+        }
+   
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "enemyArea")
+        {
+            flyEnemnyScript.activated = false;
+            flyEnemnyScript.returnseq = true;
         }
     }
 

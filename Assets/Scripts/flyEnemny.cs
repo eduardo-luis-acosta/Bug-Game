@@ -42,8 +42,18 @@ public class flyEnemny : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, startingPos, moveSpeed * Time.deltaTime);
         }
+
+        if(health <= 0){
+            Destroy(gameObject);
+        }
     }
 
-    
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Bullet"){
+            Destroy(collision.gameObject);
+            health -= 10;
+        }
+    }
 
 }

@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 0.48748046, b: 0, a: 1}
   m_FlipX: 0
@@ -177,6 +177,7 @@ MonoBehaviour:
   statsBox: {fileID: 0}
   moveSpeed: 5
   rb: {fileID: 2749675938513929275}
+  flyEnemnyScript: {fileID: 0}
   magic: 1
 --- !u!114 &4084086600200823341
 MonoBehaviour:

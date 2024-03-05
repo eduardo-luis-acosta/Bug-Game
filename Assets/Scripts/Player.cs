@@ -42,7 +42,7 @@ public class Player : MonoBehaviour
         {
             shootBullet();
         }
-        statsBox.text = "Health " + currentHealth + " \n Defense: " + defense + " \n";
+        //statsBox.text = "Health " + currentHealth + " \n Defense: " + defense + " \n";
     }
 
     void FixedUpdate()

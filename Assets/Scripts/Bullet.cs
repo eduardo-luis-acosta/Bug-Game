@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float speed = 20;
+    public float speed = 100f;
     public GameObject playerobj;
     private Player playerscript;
     void Start()

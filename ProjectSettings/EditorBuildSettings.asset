@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Debugging.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Starter Screen.unity
+    guid: 6c4de460157df2b43ab6e56c725c728b
+  - enabled: 1
+    path: Assets/Scenes/AbandonedHopsital.unity
+    guid: 2d915f656b8ab8744acbaf1eeda6eeaf
+  - enabled: 1
+    path: Assets/Scenes/Settings.unity
+    guid: e35f27fed62f14e39932a192d952cc42
   m_configObjects: {}

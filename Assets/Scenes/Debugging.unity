@@ -2986,11 +2986,11 @@ MonoBehaviour:
   npcObj: {fileID: 793096068}
   textBox: {fileID: 974389737}
   dialogList:
-  - when i say im locking in i need backshots
-  - 'BECAUSE BACKSHOTS KILLED MY GRANDMA OK!!! '
-  - i love back shots
-  - i need backshots
-  - hooray backshots
+  - i am locked in !!!!
+  - and i dont mind if the world spins faster
+  - the musics louder
+  - the waves go slower
+  - trolls 3 is better than trolls 2
 --- !u!222 &1726473781
 CanvasRenderer:
   m_ObjectHideFlags: 0

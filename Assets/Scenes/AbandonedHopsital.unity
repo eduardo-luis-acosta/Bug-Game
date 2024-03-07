@@ -123,6 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 --- !u!1 &28720994
 =======
@@ -1589,6 +1590,8 @@ CanvasRenderer:
   m_GameObject: {fileID: 646656950}
   m_CullTransparentMesh: 1
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 85582f0 (ashton commit)
 --- !u!1 &665524266
 GameObject:
   m_ObjectHideFlags: 0
@@ -6716,6 +6719,7 @@ SceneRoots:
   - {fileID: 1282623789}
   - {fileID: 687250179}
   - {fileID: 910195149}
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   - {fileID: 28720997}
 =======
@@ -6723,3 +6727,5 @@ SceneRoots:
   - {fileID: 1685269513}
   - {fileID: 1959196242}
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 85582f0 (ashton commit)

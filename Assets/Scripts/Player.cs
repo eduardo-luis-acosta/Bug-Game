@@ -20,15 +20,9 @@ public class Player : MonoBehaviour
 
     //bullet type testing
     public bool magic = false;
-
-    //Boolean from "PauseMenu" Script
-    static bool pause;
-
     // Update is called once per frame
     void Update()
     {
-        pause = PauseMenu.IsPaused;
-
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
@@ -36,14 +30,6 @@ public class Player : MonoBehaviour
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
         Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
-
-        //Will freeze player rotation to mouse when pause menu is active
-        //Will unfreeze player rotation to mouse when pause menu is not active
-        if(pause == true) {
-            direction = new Vector2(0,0);
-        } else if (pause == false) {
-            direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
-        }
 
         transform.up = direction;
 

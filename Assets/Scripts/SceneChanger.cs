@@ -44,5 +44,15 @@ public class SceneChanger : MonoBehaviour
     //Main Menu Button
     public void ReturnStart() {
         SceneManager.LoadScene("Starter Screen");
+
+        //Makes sure the game doesn't remain permanently frozen.
+        PauseMenu.IsPaused = false;
+        Time.timeScale = 1f;
+    }
+
+    public void pausedSceneReturn() {
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+
+        SceneManager.LoadScene(currentScene);
     }
 }

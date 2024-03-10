@@ -78,6 +78,12 @@ public class Player : MonoBehaviour
             shootBullet();
         }
         //statsBox.text = "Health " + currentHealth + " \n Defense: " + defense + " \n";
+
+        //TESTING. - Eddie :3
+        if(Input.GetKeyDown(KeyCode.X))
+        {
+            removeHealth(10);
+        }
     }
 
     void FixedUpdate()
@@ -139,7 +145,6 @@ public class Player : MonoBehaviour
         {
             magic = true;
         }
-   
     }
 
     void OnTriggerExit2D(Collider2D collision)

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 public class Player : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -12,7 +13,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb;
     public flyEnemny flyEnemnyScript;
     Vector2 movement;
-    private float currentHealth = 50f;
+    private float currentHealth;
     private int maxHealth = 100;
 
     private float defense = 0f;
@@ -21,8 +22,28 @@ public class Player : MonoBehaviour
     //bullet type testing
     public bool magic = false;
 
+
+
+
     //Boolean from "PauseMenu" Script
     static bool pause;
+
+    //Health Bar variable
+    public HealthBar health;
+
+    //Armor variable
+    public Armor armor;
+
+
+
+    void Start() {
+
+        //Start the game with Max Health and Set Health Bar to Max Health
+        currentHealth = maxHealth;
+        health.setMaxHealth(maxHealth);
+        armor.setArmor(0);
+
+    }
 
     // Update is called once per frame
     void Update()
@@ -57,6 +78,12 @@ public class Player : MonoBehaviour
             shootBullet();
         }
         //statsBox.text = "Health " + currentHealth + " \n Defense: " + defense + " \n";
+
+        //TESTING. - Eddie :3
+        if(Input.GetKeyDown(KeyCode.X))
+        {
+            removeHealth(10);
+        }
     }
 
     void FixedUpdate()
@@ -76,11 +103,13 @@ public class Player : MonoBehaviour
             currentHealth -= i;
         } else {
             currentHealth -= remove;
+            health.setHealth(currentHealth);
         }
     }
     public void addDefense(float add)
     {
         defense += add;
+        armor.setArmor(add);
     }
 
     void shootBullet()
@@ -116,7 +145,6 @@ public class Player : MonoBehaviour
         {
             magic = true;
         }
-   
     }
 
     void OnTriggerExit2D(Collider2D collision)

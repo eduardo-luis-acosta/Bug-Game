@@ -22,17 +22,26 @@ public class Player : MonoBehaviour
     //bullet type testing
     public bool magic = false;
 
+
+
+
     //Boolean from "PauseMenu" Script
     static bool pause;
 
     //Health Bar variable
     public HealthBar health;
 
+    //Armor variable
+    public Armor armor;
+
+
+
     void Start() {
 
         //Start the game with Max Health and Set Health Bar to Max Health
         currentHealth = maxHealth;
         health.setMaxHealth(maxHealth);
+        armor.setArmor(0);
 
     }
 
@@ -94,6 +103,7 @@ public class Player : MonoBehaviour
     public void addDefense(float add)
     {
         defense += add;
+        armor.setArmor(add);
     }
 
     void shootBullet()

@@ -772,7 +772,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8542149768108347221}
   - component: {fileID: 3707972756295148651}
-  - component: {fileID: 6273778205087559577}
+  - component: {fileID: 7293931417473208322}
   m_Layer: 0
   m_Name: Sheild Bar
   m_TagString: Untagged
@@ -854,7 +854,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &6273778205087559577
+--- !u!114 &7293931417473208322
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -863,7 +863,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6898319423311391324}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ef941bc747b8b64f9be6c30f98fff46, type: 3}
+  m_Script: {fileID: 11500000, guid: 2df086afdaef3df4585f5212816ca229, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 3707972756295148651}

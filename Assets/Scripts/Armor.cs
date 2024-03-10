@@ -7,16 +7,7 @@ public class Armor : MonoBehaviour
 {
     public Slider slider;
 
-
-    public void setMaxArmor(int armor) {
-        slider.maxValue = armor;
+    public void setArmor(float armor) {
         slider.value = armor;
     }
-
-    public void setArmor(int armor) {
-        slider.value = armor;
-    }
-
-    
-
 }

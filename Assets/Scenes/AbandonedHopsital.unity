@@ -134,6 +134,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b25f560d5129a4249a11504a4e2f36db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &648186857 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6253948704903010405, guid: e8c9c5f6e7dc94beca7d2316bd71117f, type: 3}
+  m_PrefabInstance: {fileID: 8862380707166432950}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ef941bc747b8b64f9be6c30f98fff46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &648186858 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4344863116687466520, guid: e8c9c5f6e7dc94beca7d2316bd71117f, type: 3}
+  m_PrefabInstance: {fileID: 8862380707166432950}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &665524266
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,6 +282,7 @@ MonoBehaviour:
   rb: {fileID: 687250176}
   flyEnemnyScript: {fileID: 999709912}
   magic: 0
+  health: {fileID: 648186857}
 --- !u!50 &687250176
 Rigidbody2D:
   serializedVersion: 4
@@ -1892,6 +1915,7 @@ GameObject:
   - component: {fileID: 2043428546}
   - component: {fileID: 2043428545}
   - component: {fileID: 2043428544}
+  - component: {fileID: 2043428548}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2008,6 +2032,19 @@ Transform:
   - {fileID: 1991542743}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2043428548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043428543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ef941bc747b8b64f9be6c30f98fff46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 648186858}
 --- !u!1001 &1069866436338660342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2357,6 +2394,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2127780492881654669, guid: e8c9c5f6e7dc94beca7d2316bd71117f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4747137176212633707, guid: e8c9c5f6e7dc94beca7d2316bd71117f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4747137176212633707, guid: e8c9c5f6e7dc94beca7d2316bd71117f, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8676571817796598724, guid: e8c9c5f6e7dc94beca7d2316bd71117f, type: 3}

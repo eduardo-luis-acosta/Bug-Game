@@ -8,12 +8,12 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     public GameObject player;
     public GameObject bullet;
-    public TextMeshProUGUI statsBox;
+    //public TextMeshProUGUI statsBox;
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
     public flyEnemny flyEnemnyScript;
     Vector2 movement;
-    private float currentHealth;
+    public float currentHealth;
     private int maxHealth = 100;
 
     private float defense = 0f;
@@ -49,6 +49,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         pause = PauseMenu.IsPaused;
+        health.setHealth(currentHealth);
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");

@@ -173,3 +173,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   playerobj: {fileID: 4605176569893501926, guid: db43e75fe9c44c0409b76e9d094ced5b, type: 3}
+  magicSprite: {fileID: 21300000, guid: f8b2b18c251dc8940aad90dcdce25746, type: 3}
+  baseBullet: {fileID: 21300000, guid: fbfd4d839a5d559498e94406a2189807, type: 3}

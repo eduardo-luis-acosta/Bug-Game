@@ -56,10 +56,12 @@ public class flyEnemny : MonoBehaviour
             Destroy(collision.gameObject);
             health -= 10;
         }
+        /*
         if(collision.gameObject.tag == "Player"){
-            player.removeHealth(5f);
+            //player.removeHealth(5f);
             Destroy(gameObject);
         }
+        */
     }
 
     void onDeath()

@@ -8,18 +8,24 @@ public class Bullet : MonoBehaviour
     public float speed = 100f;
     public GameObject playerobj;
     private Player playerscript;
+    public Sprite magicSprite;
+    public Sprite baseBullet;
     void Start()
     {
-        playerscript = playerobj.GetComponent<Player>();        
+        playerscript = playerobj.GetComponent<Player>();   
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = baseBullet;     
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(playerscript.magic == true)
+        if(playerscript.getBulletType().Equals("magic"))
         {
-            transform.Translate(Vector2.up * Time.deltaTime * (speed/3));
+            speed = 15f;
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = magicSprite;
+            transform.Translate(Vector2.up * Time.deltaTime * speed);
         } else {
+            speed = 100f;
             transform.Translate(Vector2.up * Time.deltaTime * speed);
         }
         

@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     private int damage = 5;
 
     //bullet type testing
-    public bool magic = false;
+    private bool magic = false;
 
 
 
@@ -145,6 +145,7 @@ public class Player : MonoBehaviour
         if(collision.gameObject.tag == "magic")
         {
             magic = true;
+            Destroy(collision.gameObject);
         }
     }
 
@@ -160,6 +161,16 @@ public class Player : MonoBehaviour
     private IEnumerator SlowHeal(int time)
     {
         yield return new WaitForSeconds(0.1f);
+    }
+
+    public string getBulletType()
+    {
+        if(magic == true)
+        {
+            return "magic";
+        } else {
+            return "base";
+        }
     }
 
 }
